@@ -1,0 +1,11 @@
+.PHONY: awscli cfssl sigil
+
+export AWS := aws --profile=nonprod
+export CFSSL := cfssl
+export SIGIL := SIGIL_DELIMS={{{,}}} sigil
+
+cfssl sigil:
+	@which $@ > /dev/null
+
+awscli:
+	@which aws > /dev/null

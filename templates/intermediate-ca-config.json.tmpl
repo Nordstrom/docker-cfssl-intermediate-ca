@@ -1,0 +1,24 @@
+{
+    "signing": {
+        "default": {
+            "expiry": "720h"
+        },
+        "profiles": {
+            "server": {
+                "auth_key": "intermediate-ca-${year?:"year must be set"}-${month?:"month must be set"}",
+                "expiry": "1440h",
+                "usages": [
+                    "signing",
+                    "key encipherment",
+                    "server auth"
+                ]
+            }
+        }
+    },
+    "auth_keys": {
+        "intermediate-ca-${year?:"year must be set"}-${month?:"month must be set"}": {
+            "type": "standard",
+            "key": "${intermediate_ca_auth_key?:"intermediate_ca_auth_key must be set"}"
+        }
+    }
+}

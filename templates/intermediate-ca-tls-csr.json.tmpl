@@ -1,0 +1,21 @@
+{
+    "CN": "cfssl.${internal_dns_domain?:\"internal_dns_domain must be set\"}",
+    "hosts": [
+        "certificate-authority.${internal_dns_domain?:\"internal_dns_domain must be set\"}",
+        "ca.${internal_dns_domain?:\"internal_dns_domain must be set\"}",
+        "cfssl.${internal_dns_domain?:\"internal_dns_domain must be set\"}"
+    ],
+    "key": {
+        "algo": "rsa",
+        "size": 4096
+    },
+    "names": [
+        {
+            "C": "US",
+            "L": "Seattle",
+            "O": "Nordstrom",
+            "OU": "Kubernetes Platform",
+            "ST": "Washington"
+        }
+    ]
+}
